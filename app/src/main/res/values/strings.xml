@@ -18,7 +18,8 @@
     <string name="loginAccount">Ya tengo cuenta</string>
     <string name="titleLogin">Inicio de Sesión</string>
     <string name="loginButton">Ingresar</string>
-    <string name="titleHome">Bienvenido</string>
+    <string name="titleHome">Nuevo Proyecto</string>
     <string name="backButton">Regresar</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="titleHomeDescription">Completa el siguiente formulario para analizar los datos de tu proyecto y determinar una metodología adecuada para su gestión.</string>
 </resources>

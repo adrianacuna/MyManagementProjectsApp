@@ -28,6 +28,18 @@ public class DBHelper extends SQLiteOpenHelper {
                 + DBSchema.UsersTable.RECONTRASENA + " TEXT , "
                 + "UNIQUE (" + DBSchema.UsersTable.CORREO + "))"
         );
+
+        sqLiteDatabase.execSQL("Create table "+ DBSchema.ProjectsTable.TABLE_PROJECTS + "("
+                + DBSchema.ProjectsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + DBSchema.ProjectsTable.NOMBREPROYECTO + " TEXT , "
+                + DBSchema.ProjectsTable.TIPOPROYECTO + " TEXT , "
+                + DBSchema.ProjectsTable.RECURSOSPROYECTO + " TEXT , "
+                + DBSchema.ProjectsTable.INICIOPROYECTO + " TEXT , "
+                + DBSchema.ProjectsTable.FINPROYECTO + " TEXT , "
+                + DBSchema.ProjectsTable.ENCARGADOPROYECTO + " TEXT , "
+                + DBSchema.ProjectsTable.DESCRIPCIONPROYECTO + " TEXT , "
+                + "UNIQUE (" + DBSchema.ProjectsTable._ID + "))"
+        );
     }
 
     @Override
@@ -46,6 +58,31 @@ public class DBHelper extends SQLiteOpenHelper {
 
         long result = db.insert(
                 DBSchema.UsersTable.TABLE_USER,
+                null,
+                values);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public Boolean insertProjectData(String nombreproyecto, String tiporproyecto, String recursosproyecto,
+                                     String inicioproyecto, String finproyecto, String encargadoproyecto,
+                                     String descripcionproyecto) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(DBSchema.ProjectsTable.NOMBREPROYECTO, nombreproyecto);
+        values.put(DBSchema.ProjectsTable.TIPOPROYECTO, tiporproyecto);
+        values.put(DBSchema.ProjectsTable.RECURSOSPROYECTO, recursosproyecto);
+        values.put(DBSchema.ProjectsTable.INICIOPROYECTO, inicioproyecto);
+        values.put(DBSchema.ProjectsTable.FINPROYECTO, finproyecto);
+        values.put(DBSchema.ProjectsTable.ENCARGADOPROYECTO, encargadoproyecto);
+        values.put(DBSchema.ProjectsTable.DESCRIPCIONPROYECTO, descripcionproyecto);
+
+        long result = db.insert(
+                DBSchema.ProjectsTable.TABLE_PROJECTS,
                 null,
                 values);
         if (result == -1) {
