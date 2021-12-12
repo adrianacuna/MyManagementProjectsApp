@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f4f4f4"
+    android:backgroundTint="@color/white"
     android:orientation="vertical"
     android:padding="30dp"
     android:textAlignment="center"
@@ -14,12 +15,12 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrarse"
+        android:text="@string/titleMain"
         android:textAlignment="center"
         android:textColor="#1A237E"
         android:textSize="30sp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="70dp"
         android:textStyle="bold" />
 
     <EditText
@@ -27,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nombre y Apellido"
+        android:hint="@string/userName"
         android:textSize="20dp"
         android:paddingLeft="15dp"
         android:layout_marginBottom="20dp"
@@ -38,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Correo electrónico"
+        android:hint="@string/userEmail"
         android:textSize="20dp"
         android:paddingLeft="15dp"
         android:layout_marginBottom="20dp"
@@ -49,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/userPassword"
         android:textSize="20dp"
         android:paddingLeft="15dp"
         android:layout_marginBottom="20dp"
@@ -60,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Repetir contraseña"
+        android:hint="@string/userRePassword"
         android:textSize="20dp"
         android:paddingLeft="15dp"
         android:layout_marginBottom="100dp"
@@ -70,20 +71,22 @@
         android:id="@+id/Registrarse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/design_default_color_primary_dark"
-        android:text="Registrarse" />
+        android:text="@string/registerButton"
+        android:textSize="20dp"
+        app:cornerRadius="50dp" />
 
     <Button
         android:id="@+id/Ingresar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/design_default_color_surface"
-        android:textColor="#998489"
-        android:text="Ya tengo cuenta" />
+        android:text="@string/loginAccount"
+        android:textColor="@color/secondaryButton"
+        android:textSize="20dp"
+        app:cornerRadius="50dp" />
 
 
 </LinearLayout>

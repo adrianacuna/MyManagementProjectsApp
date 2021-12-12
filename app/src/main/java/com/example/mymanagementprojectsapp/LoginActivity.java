@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
-    Button login;
+    Button login, back;
     DBHelper DB;
 
     @Override
@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.EmailAddressLogin);
         password = findViewById(R.id.PasswordLogin);
         login = findViewById(R.id.InicioIngresar);
+        back = findViewById(R.id.backButton);
 
         DB = new DBHelper(this);
 
@@ -45,6 +46,14 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "¡Acceso incorrecto, intente nuevamente!", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
